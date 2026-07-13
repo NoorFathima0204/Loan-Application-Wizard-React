@@ -1,6 +1,7 @@
+import { useState } from "react";
+
 import ProgressBar from "./ProgressBar";
 import StepNavigation from "./StepNavigation";
-import { useState } from "react";
 
 import Step1LoanType from "../../pages/Step1LoanType";
 import Step2PersonalInfo from "../../pages/Step2PersonalInfo";
@@ -14,8 +15,10 @@ import Step8Review from "../../pages/Step8Review";
 function Wizard() {
   const [currentStep, setCurrentStep] = useState(1);
 
+  const totalSteps = 8;
+
   const nextStep = () => {
-    if (currentStep < 8) {
+    if (currentStep < totalSteps) {
       setCurrentStep(currentStep + 1);
     }
   };
@@ -30,46 +33,50 @@ function Wizard() {
     switch (currentStep) {
       case 1:
         return <Step1LoanType />;
+
       case 2:
         return <Step2PersonalInfo />;
+
       case 3:
         return <Step3KYC />;
+
       case 4:
         return <Step4Address />;
+
       case 5:
         return <Step5Employment />;
+
       case 6:
         return <Step6CoApplicant />;
+
       case 7:
         return <Step7Documents />;
+
       case 8:
         return <Step8Review />;
+
       default:
-        return <Step1LoanType />;
+        return <h2>Invalid Step</h2>;
     }
   };
 
   return (
-  <div>
-    <h1>Loan Application Form</h1>
+    <div className="wizard-container">
+      <ProgressBar
+        currentStep={currentStep}
+        totalSteps={totalSteps}
+      />
 
-    <ProgressBar currentStep={currentStep} />
+      {renderStep()}
 
-    <h3>
-      Step {currentStep} of 8
-    </h3>
-
-    {renderStep()}
-
-    <br />
-
-    <StepNavigation
-      currentStep={currentStep}
-      nextStep={nextStep}
-      previousStep={previousStep}
-    />
-  </div>
-);
+      <StepNavigation
+        currentStep={currentStep}
+        totalSteps={totalSteps}
+        nextStep={nextStep}
+        previousStep={previousStep}
+      />
+    </div>
+  );
 }
 
 export default Wizard;

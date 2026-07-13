@@ -1,10 +1,13 @@
+import FormProvider from "./context/FormContext";
 import Wizard from "./components/wizard/Wizard";
 
 function App() {
   return (
-    <div>
-      <Wizard />
-    </div>
+    <FormProvider>
+      <div>
+        <Wizard />
+      </div>
+    </FormProvider>
   );
 }
 

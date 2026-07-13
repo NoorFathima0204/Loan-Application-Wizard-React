@@ -1,7 +1,15 @@
-import useFormData from "../hooks/useFormData";
+import { useFormData } from "../hooks/useFormData";
 
 function Step2PersonalInfo() {
-  const { formData, handleChange } = useFormData();
+  const { formData, updateFormData } = useFormData();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    updateFormData({
+      [name]: value,
+    });
+  };
 
   return (
     <div
