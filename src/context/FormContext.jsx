@@ -30,6 +30,13 @@ function FormProvider({ children }) {
     state: "",
     pincode: "",
     country: "",
+
+    //step 5
+    employmentType: "",
+    companyName: "",
+    businessName: "",
+    monthlyIncome: "",
+    workExperience: "",
   });
 
   // Function to update only the changed fields
