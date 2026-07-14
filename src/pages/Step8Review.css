@@ -1,0 +1,126 @@
+.review-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.review-title {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 30px;
+}
+
+.review-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.review-card h3 {
+  background: #2563eb;
+  color: white;
+  padding: 14px 18px;
+  margin: 0;
+}
+
+.review-body {
+  padding: 18px;
+}
+
+.review-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.review-row:last-child {
+  border-bottom: none;
+}
+
+.review-label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.review-value {
+  color: #111827;
+}
+
+.submit-section {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.submit-btn {
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 14px 34px;
+  font-size: 17px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #15803d;
+}
+
+.success-card {
+  max-width: 650px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
+
+.success-card h1 {
+  color: #16a34a;
+  margin-bottom: 15px;
+}
+
+.reference-box {
+  margin: 25px auto;
+  background: #eff6ff;
+  padding: 18px;
+  border-radius: 10px;
+}
+
+.reference-id {
+  font-size: 26px;
+  font-weight: bold;
+  color: #2563eb;
+  margin-top: 10px;
+}
+
+.new-btn {
+  margin-top: 30px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.new-btn:hover {
+  background: #1d4ed8;
+}
+
+@media(max-width:768px){
+
+.review-row{
+flex-direction:column;
+gap:6px;
+}
+
+.review-value{
+word-break:break-word;
+}
+
+}
