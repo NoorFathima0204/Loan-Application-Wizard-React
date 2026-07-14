@@ -1,33 +1,31 @@
+import "./StepNavigation.css";
+
 function StepNavigation({
   currentStep,
   nextStep,
   previousStep,
 }) {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        marginTop: "30px",
-      }}
-    >
+    <div className="navigation">
       {currentStep > 1 ? (
-        <button onClick={previousStep}>
+        <button
+          className="nav-btn prev-btn"
+          onClick={previousStep}
+        >
           ← Previous
         </button>
       ) : (
-        <div></div>
+        <div />
       )}
 
-      {currentStep < 8 ? (
-        <button onClick={nextStep}>
-          Next →
-        </button>
-      ) : (
-        <button>
-          Submit
-        </button>
-      )}
+      {currentStep < 8 && (
+  <button
+    className="nav-btn next-btn"
+    onClick={nextStep}
+  >
+    Next →
+  </button>
+)}
     </div>
   );
 }

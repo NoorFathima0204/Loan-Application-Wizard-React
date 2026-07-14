@@ -1,3 +1,5 @@
+import "./ProgressBar.css";
+
 function ProgressBar({ currentStep }) {
   const steps = [
     "Loan Type",
@@ -10,43 +12,44 @@ function ProgressBar({ currentStep }) {
     "Review",
   ];
 
-  return (
-    <div style={{ marginBottom: "30px" }}>
-      <h3>Application Progress</h3>
+  const progress = ((currentStep - 1) / (steps.length - 1)) * 100;
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginTop: "20px",
-          flexWrap: "wrap",
-        }}
-      >
+  return (
+    <div className="progress-wrapper">
+      <h2 className="progress-title">
+        Customer Onboarding Portal
+      </h2>
+
+      <p className="progress-text">
+        Step {currentStep} of {steps.length}
+      </p>
+
+      <div className="progress-track">
+        <div
+          className="progress-fill"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
+
+      <div className="steps-row">
         {steps.map((step, index) => (
           <div
+            className="step-item"
             key={index}
-            style={{
-              textAlign: "center",
-              width: "100px",
-            }}
           >
             <div
-              style={{
-                width: "35px",
-                height: "35px",
-                borderRadius: "50%",
-                margin: "0 auto",
-                lineHeight: "35px",
-                backgroundColor:
-                  currentStep >= index + 1 ? "#1F4E79" : "#d3d3d3",
-                color: "white",
-                fontWeight: "bold",
-              }}
+              className={`step-circle ${
+                currentStep >= index + 1
+                  ? "step-active"
+                  : "step-inactive"
+              }`}
             >
               {index + 1}
             </div>
 
-            <p style={{ fontSize: "12px" }}>{step}</p>
+            <div className="step-label">
+              {step}
+            </div>
           </div>
         ))}
       </div>
