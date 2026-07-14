@@ -1,7 +1,54 @@
+import { useState } from "react";
 import { useFormData } from "../hooks/useFormData";
 
 function Step8Review() {
   const { formData } = useFormData();
+
+  const [submitted, setSubmitted] = useState(false);
+
+  // Show Success Page after submission
+  if (submitted) {
+    return (
+      <div
+        style={{
+          maxWidth: "700px",
+          margin: "50px auto",
+          padding: "40px",
+          border: "1px solid #ddd",
+          borderRadius: "10px",
+          textAlign: "center",
+          backgroundColor: "#f8fff8",
+        }}
+      >
+        <h1 style={{ color: "green" }}>
+          ✅ Application Submitted Successfully
+        </h1>
+
+        <p style={{ fontSize: "18px", marginTop: "20px" }}>
+          Thank you for submitting your loan application.
+        </p>
+
+        <p>
+          Our verification team will review your application and contact you
+          shortly.
+        </p>
+
+        <h3 style={{ marginTop: "30px" }}>
+          Reference Number:
+        </h3>
+
+        <p
+          style={{
+            fontSize: "20px",
+            fontWeight: "bold",
+            color: "#0d6efd",
+          }}
+        >
+          LOAN-2026-001
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -37,7 +84,7 @@ function Step8Review() {
 
       <hr />
 
-      <h3>KYC</h3>
+      <h3>KYC Details</h3>
 
       <p><strong>PAN:</strong> {formData.pan}</p>
       <p><strong>Aadhaar:</strong> {formData.aadhaar}</p>
@@ -48,7 +95,7 @@ function Step8Review() {
 
       <hr />
 
-      <h3>Address</h3>
+      <h3>Address Details</h3>
 
       <p><strong>Address Line 1:</strong> {formData.address1}</p>
       <p><strong>Address Line 2:</strong> {formData.address2}</p>
@@ -59,37 +106,34 @@ function Step8Review() {
 
       <hr />
 
-      <h3>Employment</h3>
+      <h3>Employment Details</h3>
 
       <p><strong>Employment Type:</strong> {formData.employmentType}</p>
 
       {formData.companyName && (
-        <p><strong>Company:</strong> {formData.companyName}</p>
+        <p><strong>Company Name:</strong> {formData.companyName}</p>
       )}
 
       {formData.businessName && (
-        <p><strong>Business:</strong> {formData.businessName}</p>
+        <p><strong>Business Name:</strong> {formData.businessName}</p>
       )}
 
       <p><strong>Monthly Income:</strong> ₹ {formData.monthlyIncome}</p>
 
-      <p><strong>Experience:</strong> {formData.workExperience}</p>
+      <p><strong>Work Experience:</strong> {formData.workExperience}</p>
 
       <hr />
 
-      <h3>Co-Applicant</h3>
+      <h3>Co-Applicant Details</h3>
 
       <p><strong>Has Co-Applicant:</strong> {formData.hasCoApplicant}</p>
 
       {formData.hasCoApplicant === "Yes" && (
         <>
           <p><strong>Name:</strong> {formData.coApplicantName}</p>
-
           <p><strong>Relationship:</strong> {formData.relationship}</p>
-
           <p><strong>Mobile:</strong> {formData.coApplicantMobile}</p>
-
-          <p><strong>Income:</strong> ₹ {formData.coApplicantIncome}</p>
+          <p><strong>Annual Income:</strong> ₹ {formData.coApplicantIncome}</p>
         </>
       )}
 
@@ -120,16 +164,16 @@ function Step8Review() {
       <br />
 
       <button
+        onClick={() => setSubmitted(true)}
         style={{
           padding: "12px 30px",
-          background: "#0d6efd",
+          backgroundColor: "#0d6efd",
           color: "white",
           border: "none",
           borderRadius: "8px",
           cursor: "pointer",
           fontSize: "16px",
         }}
-        onClick={() => alert("Application Submitted Successfully!")}
       >
         Submit Application
       </button>
