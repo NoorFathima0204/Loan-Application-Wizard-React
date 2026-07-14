@@ -37,6 +37,13 @@ function FormProvider({ children }) {
     businessName: "",
     monthlyIncome: "",
     workExperience: "",
+
+    //step 6
+    hasCoApplicant: "",
+    coApplicantName: "",
+    relationship: "",
+    coApplicantMobile: "",
+    coApplicantIncome: "",
   });
 
   // Function to update only the changed fields
