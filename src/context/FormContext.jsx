@@ -44,6 +44,13 @@ function FormProvider({ children }) {
     relationship: "",
     coApplicantMobile: "",
     coApplicantIncome: "",
+
+    
+    // Step 7
+    panDocument: null,
+    aadhaarDocument: null,
+    salarySlip: null,
+    bankStatement: null,
   });
 
   // Function to update only the changed fields
