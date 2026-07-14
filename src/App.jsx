@@ -1,3 +1,4 @@
+import "./App.css";
 import Wizard from "./components/wizard/Wizard";
 
 function App() {
