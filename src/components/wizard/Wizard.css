@@ -1,0 +1,49 @@
+.wizard-container {
+  width: 95%;
+  max-width: 950px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.wizard-header {
+  background: linear-gradient(135deg, #0f4c81, #2563eb);
+  color: white;
+  padding: 28px;
+}
+
+.wizard-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.wizard-header p {
+  margin-top: 8px;
+  opacity: .9;
+  font-size: 15px;
+}
+
+.wizard-content {
+  padding: 35px;
+  min-height: 450px;
+}
+
+@media (max-width:768px){
+
+.wizard-container{
+    width:95%;
+    margin:20px auto;
+}
+
+.wizard-content{
+    padding:20px;
+}
+
+.wizard-header h1{
+    font-size:24px;
+}
+
+}

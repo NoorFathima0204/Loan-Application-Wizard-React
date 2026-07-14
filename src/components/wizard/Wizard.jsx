@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Wizard.css";
 
 import ProgressBar from "./ProgressBar";
 import StepNavigation from "./StepNavigation";
@@ -33,28 +34,20 @@ function Wizard() {
     switch (currentStep) {
       case 1:
         return <Step1LoanType />;
-
       case 2:
         return <Step2PersonalInfo />;
-
       case 3:
         return <Step3KYC />;
-
       case 4:
         return <Step4Address />;
-
       case 5:
         return <Step5Employment />;
-
       case 6:
         return <Step6CoApplicant />;
-
       case 7:
         return <Step7Documents />;
-
       case 8:
         return <Step8Review />;
-
       default:
         return <h2>Invalid Step</h2>;
     }
@@ -62,12 +55,21 @@ function Wizard() {
 
   return (
     <div className="wizard-container">
+      <div className="wizard-header">
+        <h1>Customer Loan Application</h1>
+        <p>
+          Complete all 8 steps to submit your loan application.
+        </p>
+      </div>
+
       <ProgressBar
         currentStep={currentStep}
         totalSteps={totalSteps}
       />
 
-      {renderStep()}
+      <div className="wizard-content">
+        {renderStep()}
+      </div>
 
       <StepNavigation
         currentStep={currentStep}
