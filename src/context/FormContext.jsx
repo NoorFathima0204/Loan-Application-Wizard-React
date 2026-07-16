@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 export const FormContext = createContext();
 
@@ -52,22 +52,9 @@ const initialFormData = {
 };
 
 function FormProvider({ children }) {
-  const [formData, setFormData] = useState(() => {
-    const savedData = localStorage.getItem("loanApplication");
+  const [formData, setFormData] = useState(initialFormData);
 
-    if (savedData) {
-      return JSON.parse(savedData);
-    }
-
-    return initialFormData;
-  });
-
-  useEffect(() => {
-    localStorage.setItem(
-      "loanApplication",
-      JSON.stringify(formData)
-    );
-  }, [formData]);
+  const [errors, setErrors] = useState({});
 
   const updateFormData = (data) => {
     setFormData((prev) => ({
@@ -78,7 +65,7 @@ function FormProvider({ children }) {
 
   const clearFormData = () => {
     setFormData(initialFormData);
-    localStorage.removeItem("loanApplication");
+    setErrors({});
   };
 
   return (
@@ -86,6 +73,8 @@ function FormProvider({ children }) {
       value={{
         formData,
         updateFormData,
+        errors,
+        setErrors,
         clearFormData,
       }}
     >

@@ -1,19 +1,11 @@
-import { useFormData } from "../hooks/useFormData";
+import { useFormHandlers } from "../hooks/useFormHandlers";
 
 function Step3KYC() {
-  const { formData, updateFormData } = useFormData();
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-
-    updateFormData({
-      [name]: type === "checkbox" ? checked : value,
-    });
-  };
+  const { formData, errors, handleChange } = useFormHandlers();
 
   return (
     <div className="step-container">
-      <h2>KYC Verification</h2>
+      <h2>Step 3: KYC Verification</h2>
 
       <div className="form-group">
         <label>PAN Number</label>
@@ -25,6 +17,10 @@ function Step3KYC() {
           value={formData.pan}
           onChange={handleChange}
         />
+
+        {errors.pan && (
+          <p className="error">{errors.pan}</p>
+        )}
       </div>
 
       <div className="form-group">
@@ -33,10 +29,14 @@ function Step3KYC() {
         <input
           type="text"
           name="aadhaar"
-          placeholder="1234 5678 9012"
+          placeholder="123456789012"
           value={formData.aadhaar}
           onChange={handleChange}
         />
+
+        {errors.aadhaar && (
+          <p className="error">{errors.aadhaar}</p>
+        )}
       </div>
 
       <div className="form-group">
@@ -46,10 +46,13 @@ function Step3KYC() {
             name="consent"
             checked={formData.consent}
             onChange={handleChange}
-          />
-
+          />{" "}
           I authorize the bank to verify my KYC details.
         </label>
+
+        {errors.consent && (
+          <p className="error">{errors.consent}</p>
+        )}
       </div>
     </div>
   );

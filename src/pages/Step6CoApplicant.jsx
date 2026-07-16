@@ -1,131 +1,111 @@
-import { useFormData } from "../hooks/useFormData";
+import { useFormHandlers } from "../hooks/useFormHandlers";
 
 function Step6CoApplicant() {
-  const { formData, updateFormData } = useFormData();
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    updateFormData({
-      [name]: value,
-    });
-  };
+  const { formData, errors, handleChange } = useFormHandlers();
 
   return (
-    <div
-      style={{
-        maxWidth: "600px",
-        margin: "30px auto",
-        padding: "20px",
-        border: "1px solid #ddd",
-        borderRadius: "10px",
-      }}
-    >
-      <h2>Co-Applicant Details</h2>
+    <div className="step-container">
+      <h2>Step 6: Co-Applicant Details</h2>
 
-      <br />
+      <div className="form-group">
+        <label>Do you have a Co-Applicant?</label>
 
-      <label>Do you have a Co-Applicant?</label>
+        <label>
+          <input
+            type="radio"
+            name="hasCoApplicant"
+            value="Yes"
+            checked={formData.hasCoApplicant === "Yes"}
+            onChange={handleChange}
+          />
+          Yes
+        </label>
 
-      <br />
-      <br />
+        <label>
+          <input
+            type="radio"
+            name="hasCoApplicant"
+            value="No"
+            checked={formData.hasCoApplicant === "No"}
+            onChange={handleChange}
+          />
+          No
+        </label>
 
-      <label>
-        <input
-          type="radio"
-          name="hasCoApplicant"
-          value="Yes"
-          checked={formData.hasCoApplicant === "Yes"}
-          onChange={handleChange}
-        />
-        Yes
-      </label>
-
-      <br />
-      <br />
-
-      <label>
-        <input
-          type="radio"
-          name="hasCoApplicant"
-          value="No"
-          checked={formData.hasCoApplicant === "No"}
-          onChange={handleChange}
-        />
-        No
-      </label>
-
-      <br />
-      <br />
+        {errors.hasCoApplicant && (
+          <p className="error">{errors.hasCoApplicant}</p>
+        )}
+      </div>
 
       {formData.hasCoApplicant === "Yes" && (
         <>
-          <label>Co-Applicant Name</label>
+          <div className="form-group">
+            <label>Co-Applicant Name</label>
 
-          <input
-            type="text"
-            name="coApplicantName"
-            value={formData.coApplicantName}
-            onChange={handleChange}
-            placeholder="Enter Name"
-            style={{
-              width: "100%",
-              padding: "10px",
-              marginTop: "5px",
-              marginBottom: "15px",
-            }}
-          />
+            <input
+              type="text"
+              name="coApplicantName"
+              value={formData.coApplicantName}
+              onChange={handleChange}
+              placeholder="Enter Name"
+            />
 
-          <label>Relationship</label>
+            {errors.coApplicantName && (
+              <p className="error">{errors.coApplicantName}</p>
+            )}
+          </div>
 
-          <input
-            type="text"
-            name="relationship"
-            value={formData.relationship}
-            onChange={handleChange}
-            placeholder="Father / Mother / Spouse / Sibling"
-            style={{
-              width: "100%",
-              padding: "10px",
-              marginTop: "5px",
-              marginBottom: "15px",
-            }}
-          />
+          <div className="form-group">
+            <label>Relationship</label>
 
-          <label>Mobile Number</label>
+            <input
+              type="text"
+              name="relationship"
+              value={formData.relationship}
+              onChange={handleChange}
+              placeholder="Father / Mother / Spouse / Sibling"
+            />
 
-          <input
-            type="tel"
-            name="coApplicantMobile"
-            value={formData.coApplicantMobile}
-            onChange={handleChange}
-            placeholder="Enter Mobile Number"
-            style={{
-              width: "100%",
-              padding: "10px",
-              marginTop: "5px",
-              marginBottom: "15px",
-            }}
-          />
+            {errors.relationship && (
+              <p className="error">{errors.relationship}</p>
+            )}
+          </div>
 
-          <label>Annual Income (₹)</label>
+          <div className="form-group">
+            <label>Mobile Number</label>
 
-          <input
-            type="number"
-            name="coApplicantIncome"
-            value={formData.coApplicantIncome}
-            onChange={handleChange}
-            placeholder="Enter Annual Income"
-            style={{
-              width: "100%",
-              padding: "10px",
-              marginTop: "5px",
-            }}
-          />
+            <input
+              type="tel"
+              name="coApplicantMobile"
+              value={formData.coApplicantMobile}
+              onChange={handleChange}
+              placeholder="Enter Mobile Number"
+            />
+
+            {errors.coApplicantMobile && (
+              <p className="error">{errors.coApplicantMobile}</p>
+            )}
+          </div>
+
+          <div className="form-group">
+            <label>Annual Income (₹)</label>
+
+            <input
+              type="number"
+              name="coApplicantIncome"
+              value={formData.coApplicantIncome}
+              onChange={handleChange}
+              placeholder="Enter Annual Income"
+            />
+
+            {errors.coApplicantIncome && (
+              <p className="error">{errors.coApplicantIncome}</p>
+            )}
+          </div>
         </>
       )}
     </div>
   );
 }
 
-export default Step6CoApplicant; 
+export default Step6CoApplicant;

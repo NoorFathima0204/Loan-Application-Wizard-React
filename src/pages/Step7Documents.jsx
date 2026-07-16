@@ -1,9 +1,8 @@
-import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
-import { useFormData } from "../hooks/useFormData";
+import { useFormHandlers } from "../hooks/useFormHandlers";
 
 function Step7Documents() {
-  const { formData, updateFormData } = useFormData();
+  const { formData, errors, updateFormData } = useFormHandlers();
 
   const createDropzone = (fieldName) => {
     return useDropzone({
@@ -22,30 +21,11 @@ function Step7Documents() {
   const salaryDropzone = createDropzone("salarySlip");
   const bankDropzone = createDropzone("bankStatement");
 
-  const uploadBoxStyle = {
-    border: "2px dashed #888",
-    padding: "20px",
-    textAlign: "center",
-    cursor: "pointer",
-    borderRadius: "10px",
-    marginBottom: "20px",
-  };
-
   return (
-    <div
-      style={{
-        maxWidth: "700px",
-        margin: "30px auto",
-        padding: "20px",
-        border: "1px solid #ddd",
-        borderRadius: "10px",
-      }}
-    >
-      <h2>Upload Documents</h2>
+    <div className="step-container">
+      <h2>Step 7: Upload Documents</h2>
 
-      <br />
-
-      <div {...panDropzone.getRootProps()} style={uploadBoxStyle}>
+      <div {...panDropzone.getRootProps()} className="upload-box">
         <input {...panDropzone.getInputProps()} />
 
         <strong>PAN Card</strong>
@@ -56,9 +36,13 @@ function Step7Documents() {
         {formData.panDocument
           ? formData.panDocument.name
           : "Drag & Drop or Click to Upload"}
+
+        {errors.panDocument && (
+          <p className="error">{errors.panDocument}</p>
+        )}
       </div>
 
-      <div {...aadhaarDropzone.getRootProps()} style={uploadBoxStyle}>
+      <div {...aadhaarDropzone.getRootProps()} className="upload-box">
         <input {...aadhaarDropzone.getInputProps()} />
 
         <strong>Aadhaar Card</strong>
@@ -69,9 +53,13 @@ function Step7Documents() {
         {formData.aadhaarDocument
           ? formData.aadhaarDocument.name
           : "Drag & Drop or Click to Upload"}
+
+        {errors.aadhaarDocument && (
+          <p className="error">{errors.aadhaarDocument}</p>
+        )}
       </div>
 
-      <div {...salaryDropzone.getRootProps()} style={uploadBoxStyle}>
+      <div {...salaryDropzone.getRootProps()} className="upload-box">
         <input {...salaryDropzone.getInputProps()} />
 
         <strong>Salary Slip</strong>
@@ -82,9 +70,13 @@ function Step7Documents() {
         {formData.salarySlip
           ? formData.salarySlip.name
           : "Drag & Drop or Click to Upload"}
+
+        {errors.salarySlip && (
+          <p className="error">{errors.salarySlip}</p>
+        )}
       </div>
 
-      <div {...bankDropzone.getRootProps()} style={uploadBoxStyle}>
+      <div {...bankDropzone.getRootProps()} className="upload-box">
         <input {...bankDropzone.getInputProps()} />
 
         <strong>Bank Statement</strong>
@@ -95,6 +87,10 @@ function Step7Documents() {
         {formData.bankStatement
           ? formData.bankStatement.name
           : "Drag & Drop or Click to Upload"}
+
+        {errors.bankStatement && (
+          <p className="error">{errors.bankStatement}</p>
+        )}
       </div>
     </div>
   );

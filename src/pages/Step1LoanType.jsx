@@ -1,134 +1,109 @@
-import { useFormData } from "../hooks/useFormData";
+import { useFormHandlers } from "../hooks/useFormHandlers";
 
 function Step1LoanType() {
-  const { formData, updateFormData } = useFormData();
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    updateFormData({
-      [name]: value,
-    });
-  };
+  const { formData, errors, handleChange } = useFormHandlers();
 
   return (
-    <div
-      style={{
-        maxWidth: "500px",
-        margin: "30px auto",
-        padding: "20px",
-        border: "1px solid #ddd",
-        borderRadius: "10px",
-      }}
-    >
+    <div className="step-container">
       <h2>Step 1: Loan Type</h2>
 
-      <div style={{ marginTop: "20px" }}>
-        <label>
-          <input
-            type="radio"
-            name="loanType"
-            value="Personal"
-            checked={formData.loanType === "Personal"}
-            onChange={handleChange}
-          />
-          Personal Loan
-        </label>
+      <div className="form-group">
+        <label>Loan Type</label>
 
-        <br />
-        <br />
+        <div className="radio-group">
+          <label>
+            <input
+              type="radio"
+              name="loanType"
+              value="Personal"
+              checked={formData.loanType === "Personal"}
+              onChange={handleChange}
+            />
+            Personal Loan
+          </label>
 
-        <label>
-          <input
-            type="radio"
-            name="loanType"
-            value="Home"
-            checked={formData.loanType === "Home"}
-            onChange={handleChange}
-          />
-          Home Loan
-        </label>
+          <label>
+            <input
+              type="radio"
+              name="loanType"
+              value="Home"
+              checked={formData.loanType === "Home"}
+              onChange={handleChange}
+            />
+            Home Loan
+          </label>
 
-        <br />
-        <br />
+          <label>
+            <input
+              type="radio"
+              name="loanType"
+              value="Business"
+              checked={formData.loanType === "Business"}
+              onChange={handleChange}
+            />
+            Business Loan
+          </label>
+        </div>
 
-        <label>
-          <input
-            type="radio"
-            name="loanType"
-            value="Business"
-            checked={formData.loanType === "Business"}
-            onChange={handleChange}
-          />
-          Business Loan
-        </label>
+        {errors.loanType && (
+          <p className="error">{errors.loanType}</p>
+        )}
       </div>
 
-      <br />
+      <div className="form-group">
+        <label>Loan Amount</label>
 
-      <label>Loan Amount</label>
+        <input
+          type="number"
+          name="loanAmount"
+          placeholder="Enter loan amount"
+          value={formData.loanAmount}
+          onChange={handleChange}
+        />
 
-      <br />
+        {errors.loanAmount && (
+          <p className="error">{errors.loanAmount}</p>
+        )}
+      </div>
 
-      <input
-        type="number"
-        name="loanAmount"
-        placeholder="Enter loan amount"
-        value={formData.loanAmount}
-        onChange={handleChange}
-        style={{
-          width: "100%",
-          padding: "10px",
-          marginTop: "5px",
-        }}
-      />
+      <div className="form-group">
+        <label>Loan Tenure</label>
 
-      <br />
-      <br />
+        <select
+          name="loanTenure"
+          value={formData.loanTenure}
+          onChange={handleChange}
+        >
+          <option value="">Select Tenure</option>
+          <option value="1 Year">1 Year</option>
+          <option value="2 Years">2 Years</option>
+          <option value="3 Years">3 Years</option>
+          <option value="5 Years">5 Years</option>
+          <option value="10 Years">10 Years</option>
+          <option value="15 Years">15 Years</option>
+          <option value="20 Years">20 Years</option>
+        </select>
 
-      <label>Loan Tenure</label>
+        {errors.loanTenure && (
+          <p className="error">{errors.loanTenure}</p>
+        )}
+      </div>
 
-      <br />
+      <div className="form-group">
+        <label>Purpose of Loan</label>
 
-      <select
-        name="loanTenure"
-        value={formData.loanTenure}
-        onChange={handleChange}
-        style={{
-          width: "100%",
-          padding: "10px",
-          marginTop: "5px",
-        }}
-      >
-        <option value="">Select Tenure</option>
-        <option value="1 Year">1 Year</option>
-        <option value="2 Years">2 Years</option>
-        <option value="3 Years">3 Years</option>
-        <option value="5 Years">5 Years</option>
-        <option value="10 Years">10 Years</option>
-        <option value="15 Years">15 Years</option>
-        <option value="20 Years">20 Years</option>
-      </select>
+        <textarea
+          name="loanPurpose"
+          rows="4"
+          placeholder="Why do you need this loan?"
+          value={formData.loanPurpose}
+          onChange={handleChange}
+        />
 
-      <br />
-      <br />
-
-      <label>Purpose of Loan</label>
-
-      <br />
-
-      <textarea
-        name="loanPurpose"
-        rows="4"
-        placeholder="Why do you need this loan?"
-        value={formData.loanPurpose}
-        onChange={handleChange}
-        style={{
-          width: "100%",
-          padding: "10px",
-          marginTop: "5px",
-        }}
-      />
+        {errors.loanPurpose && (
+          <p className="error">{errors.loanPurpose}</p>
+        )}
+      </div>
     </div>
   );
 }

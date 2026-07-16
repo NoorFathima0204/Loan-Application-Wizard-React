@@ -2,6 +2,7 @@ import "./StepNavigation.css";
 
 function StepNavigation({
   currentStep,
+  totalSteps,
   nextStep,
   previousStep,
 }) {
@@ -9,6 +10,7 @@ function StepNavigation({
     <div className="navigation">
       {currentStep > 1 ? (
         <button
+          type="button"
           className="nav-btn prev-btn"
           onClick={previousStep}
         >
@@ -18,14 +20,15 @@ function StepNavigation({
         <div />
       )}
 
-      {currentStep < 8 && (
-  <button
-    className="nav-btn next-btn"
-    onClick={nextStep}
-  >
-    Next →
-  </button>
-)}
+      {currentStep < totalSteps && (
+        <button
+          type="button"
+          className="nav-btn next-btn"
+          onClick={nextStep}
+        >
+          Next →
+        </button>
+      )}
     </div>
   );
 }
