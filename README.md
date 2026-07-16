@@ -85,7 +85,33 @@ npm run build
 
 ## 📸 Screenshots
 
-Screenshots of the application will be added soon.
+### Step 1 - Loan Type
+
+![Step 1](screenshots/step1.png)
+
+---
+
+### Step 2 - Personal Information
+
+![Step 2](screenshots/step2.png)
+
+---
+
+### Step 5 - Employment Details
+
+![Step 5](screenshots/step5.png)
+
+---
+
+### Step 7 - Document Upload
+
+![Step 7](screenshots/step7.png)
+
+---
+
+### Step 8 - Review & Submit
+
+![Step 8](screenshots/step8.png)
 
 ---
 
