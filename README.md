@@ -1,16 +1,111 @@
-# React + Vite
+# 🏦 Loan Application Wizard (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern multi-step Loan Application Wizard built using **React**. The application guides users through the complete loan application process, including personal details, KYC verification, employment information, document uploads, and a final review before submission.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- 📄 8-step loan application workflow
+- 🧾 Personal information collection
+- 🪪 KYC verification (PAN & Aadhaar)
+- 📍 Address details
+- 💼 Employment details
+- 👥 Co-applicant information
+- 📁 Drag & Drop document upload
+- ✅ Review before submission
+- ✔️ Form validation for every step
+- 🎨 Responsive user interface
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- JavaScript (ES6+)
+- Context API
+- React Dropzone
+- Zod
+- CSS3
+- Git & GitHub
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+├── components/      # Reusable UI components
+├── context/         # Context API for global state
+├── hooks/           # Custom React hooks
+├── pages/           # All 8 wizard step pages
+├── styles/          # Shared CSS files
+├── utils/           # Validation functions
+├── validation/      # Zod schemas
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## 🚀 Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/NoorFathima0204/Loan-Application-Wizard-React.git
+```
+
+### Navigate to the project folder
+
+```bash
+cd Loan-Application-Wizard-React
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run the development server
+
+```bash
+npm run dev
+```
+
+### Build the project
+
+```bash
+npm run build
+```
+
+---
+
+## 📸 Screenshots
+
+Screenshots of the application will be added soon.
+
+---
+
+## 🚀 Future Improvements
+
+- Integrate a backend API
+- Store applications in a database
+- Add user authentication
+- Send email notifications
+- Add a loan eligibility calculator
+- Create an admin dashboard
+
+---
+
+## 👩‍💻 Developer
+
+**Noor Fathima**
+
+Built as part of a Full Stack Engineer Internship Project using React and Vite.
+
+---
+
+⭐ If you found this project interesting, feel free to star the repository.
