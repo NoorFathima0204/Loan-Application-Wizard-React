@@ -38,11 +38,10 @@ A modern multi-step **Loan Application Wizard** built using **React** and **Vite
 - Vite
 - JavaScript (ES6+)
 - Context API
-- React Hook Form
 - React Dropzone
-- Zod
 - CSS3
 - Git & GitHub
+- GitHub Pages
 
 ---
 
