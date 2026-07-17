@@ -1,21 +1,34 @@
 # 🏦 Loan Application Wizard (React)
 
-A modern multi-step Loan Application Wizard built using **React**. The application guides users through the complete loan application process, including personal details, KYC verification, employment information, document uploads, and a final review before submission.
+A modern multi-step **Loan Application Wizard** built using **React** and **Vite**. The application guides users through the complete loan application process, including personal details, KYC verification, employment information, document uploads, digital signature, and a final review before submission.
+
+---
+
+## 🌐 Live Demo
+
+> 🚀 Coming Soon (Will be deployed using GitHub Pages)
+
+---
+
+## 📸 Project Preview
+
+![Loan Application Wizard](screenshots/home.png)
 
 ---
 
 ## ✨ Features
 
-- 📄 8-step loan application workflow
-- 🧾 Personal information collection
-- 🪪 KYC verification (PAN & Aadhaar)
-- 📍 Address details
-- 💼 Employment details
-- 👥 Co-applicant information
-- 📁 Drag & Drop document upload
-- ✅ Review before submission
-- ✔️ Form validation for every step
-- 🎨 Responsive user interface
+- Multi-step loan application wizard
+- Real-time form validation
+- Secure PAN & Aadhaar verification
+- Personal and address information collection
+- Employment and co-applicant details
+- Drag-and-drop document upload
+- Digital signature support
+- Review before final submission
+- Responsive design for desktop and mobile
+- Context API for state management
+- Built with React + Vite
 
 ---
 
@@ -25,6 +38,7 @@ A modern multi-step Loan Application Wizard built using **React**. The applicati
 - Vite
 - JavaScript (ES6+)
 - Context API
+- React Hook Form
 - React Dropzone
 - Zod
 - CSS3
@@ -34,7 +48,7 @@ A modern multi-step Loan Application Wizard built using **React**. The applicati
 
 ## 📂 Project Structure
 
-```
+```text
 src/
 ├── components/      # Reusable UI components
 ├── context/         # Context API for global state
@@ -69,7 +83,7 @@ cd Loan-Application-Wizard-React
 npm install
 ```
 
-### Run the development server
+### Start the development server
 
 ```bash
 npm run dev
@@ -85,31 +99,31 @@ npm run build
 
 ## 📸 Screenshots
 
-### Step 1 - Loan Type
+### 🏠 Step 1 – Loan Type
 
 ![Step 1](screenshots/step1.png)
 
 ---
 
-### Step 2 - Personal Information
+### 👤 Step 2 – Personal Information
 
 ![Step 2](screenshots/step2.png)
 
 ---
 
-### Step 5 - Employment Details
+### 💼 Step 5 – Employment Details
 
 ![Step 5](screenshots/step5.png)
 
 ---
 
-### Step 7 - Document Upload
+### 📂 Step 7 – Document Upload
 
 ![Step 7](screenshots/step7.png)
 
 ---
 
-### Step 8 - Review & Submit
+### ✅ Step 8 – Review & Submit
 
 ![Step 8](screenshots/step8.png)
 
@@ -117,12 +131,14 @@ npm run build
 
 ## 🚀 Future Improvements
 
-- Integrate a backend API
-- Store applications in a database
-- Add user authentication
-- Send email notifications
-- Add a loan eligibility calculator
-- Create an admin dashboard
+- Backend integration with Django
+- Store applications in a MySQL database
+- User authentication and authorization
+- Email notifications
+- Loan eligibility calculator
+- Admin dashboard
+- Application tracking system
+- PDF generation for submitted applications
 
 ---
 
@@ -130,8 +146,18 @@ npm run build
 
 **Noor Fathima**
 
-Built as part of a Full Stack Engineer Internship Project using React and Vite.
+Full Stack Developer passionate about building scalable and user-friendly web applications.
+
+This project was developed as part of a **Full Stack Engineer Internship** using **React** and **Vite**.
 
 ---
+
+## 📄 License
+
+This project is intended for educational and portfolio purposes.
+
+---
+
+Built with ❤️ using React + Vite
 
 ⭐ If you found this project interesting, feel free to star the repository.
