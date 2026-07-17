@@ -6,7 +6,7 @@ A modern multi-step **Loan Application Wizard** built using **React** and **Vite
 
 ## 🌐 Live Demo
 
-> 🚀 Coming Soon (Will be deployed using GitHub Pages)
+🔗 https://noorfathima0204.github.io/Loan-Application-Wizard-React/
 
 ---
 
