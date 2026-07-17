@@ -1,6 +1,6 @@
 # 🏦 Loan Application Wizard (React)
 
-A modern multi-step **Loan Application Wizard** built using **React** and **Vite**. The application guides users through the complete loan application process, including personal details, KYC verification, employment information, document uploads, digital signature, and a final review before submission.
+A modern **multi-step Loan Application Wizard** built using **React** and **Vite**. The application guides users through the complete loan application process, including loan selection, personal details, KYC verification, employment information, document uploads, and final review before submission.
 
 ---
 
@@ -10,25 +10,21 @@ A modern multi-step **Loan Application Wizard** built using **React** and **Vite
 
 ---
 
-## 📸 Project Preview
-
-![Loan Application Wizard](screenshots/home.png)
-
----
-
 ## ✨ Features
 
-- Multi-step loan application wizard
-- Real-time form validation
-- Secure PAN & Aadhaar verification
-- Personal and address information collection
-- Employment and co-applicant details
-- Drag-and-drop document upload
-- Digital signature support
-- Review before final submission
-- Responsive design for desktop and mobile
-- Context API for state management
-- Built with React + Vite
+- 📄 8-step loan application workflow
+- 🏦 Loan type selection
+- 👤 Personal information collection
+- 🪪 KYC verification (PAN & Aadhaar)
+- 📍 Address information
+- 💼 Employment details
+- 👥 Co-applicant information
+- 📁 Drag & Drop document upload
+- ✍️ Digital signature support
+- ✅ Review & Submit page
+- ✔️ Step-by-step validation
+- 📱 Responsive user interface
+- 🚀 Deployed using GitHub Pages
 
 ---
 
@@ -40,7 +36,8 @@ A modern multi-step **Loan Application Wizard** built using **React** and **Vite
 - Context API
 - React Dropzone
 - CSS3
-- Git & GitHub
+- Git
+- GitHub
 - GitHub Pages
 
 ---
@@ -49,14 +46,37 @@ A modern multi-step **Loan Application Wizard** built using **React** and **Vite
 
 ```text
 src/
-├── components/      # Reusable UI components
-├── context/         # Context API for global state
-├── hooks/           # Custom React hooks
-├── pages/           # All 8 wizard step pages
-├── styles/          # Shared CSS files
-├── utils/           # Validation functions
-├── validation/      # Zod schemas
+├── assets/              # Images and static assets
+├── components/
+│   ├── common/          # Common reusable components
+│   ├── layout/          # Layout components
+│   └── wizard/
+│       ├── ProgressBar.jsx
+│       ├── StepNavigation.jsx
+│       └── Wizard.jsx
+├── context/
+│   └── FormContext.jsx
+├── data/
+├── hooks/
+│   ├── useFormData.js
+│   └── useFormHandlers.js
+├── pages/
+│   ├── Step1LoanType.jsx
+│   ├── Step2PersonalInfo.jsx
+│   ├── Step3KYC.jsx
+│   ├── Step4Address.jsx
+│   ├── Step5Employment.jsx
+│   ├── Step6CoApplicant.jsx
+│   ├── Step7Documents.jsx
+│   └── Step8Review.jsx
+├── styles/
+├── utils/
+│   └── validation.js
+├── validation/
+│   └── loanSchemas.js
 ├── App.jsx
+├── App.css
+├── index.css
 └── main.jsx
 ```
 
@@ -82,13 +102,13 @@ cd Loan-Application-Wizard-React
 npm install
 ```
 
-### Start the development server
+### Run the development server
 
 ```bash
 npm run dev
 ```
 
-### Build the project
+### Build for production
 
 ```bash
 npm run build
@@ -98,31 +118,49 @@ npm run build
 
 ## 📸 Screenshots
 
-### 🏠 Step 1 – Loan Type
+### Step 1 – Loan Type
 
 ![Step 1](screenshots/step1.png)
 
 ---
 
-### 👤 Step 2 – Personal Information
+### Step 2 – Personal Information
 
 ![Step 2](screenshots/step2.png)
 
 ---
 
-### 💼 Step 5 – Employment Details
+### Step 3 – KYC Verification
+
+![Step 3](screenshots/step3.png)
+
+---
+
+### Step 4 – Address Details
+
+![Step 4](screenshots/step4.png)
+
+---
+
+### Step 5 – Employment Details
 
 ![Step 5](screenshots/step5.png)
 
 ---
 
-### 📂 Step 7 – Document Upload
+### Step 6 – Co-Applicant Details
+
+![Step 6](screenshots/step6.png)
+
+---
+
+### Step 7 – Document Upload
 
 ![Step 7](screenshots/step7.png)
 
 ---
 
-### ✅ Step 8 – Review & Submit
+### Step 8 – Review & Submit
 
 ![Step 8](screenshots/step8.png)
 
@@ -130,14 +168,30 @@ npm run build
 
 ## 🚀 Future Improvements
 
-- Backend integration with Django
-- Store applications in a MySQL database
-- User authentication and authorization
+- Backend API integration
+- Database storage
+- User authentication
 - Email notifications
 - Loan eligibility calculator
 - Admin dashboard
-- Application tracking system
-- PDF generation for submitted applications
+- React Hook Form integration
+- Complete Zod schema validation
+- Dark mode support
+
+---
+
+## 📚 What I Learned
+
+Through this project, I gained practical experience in:
+
+- Building multi-step forms using React
+- Managing application state with Context API
+- Creating reusable React components
+- Form validation techniques
+- Drag & Drop file uploads
+- Git and GitHub workflow
+- Deploying React applications using GitHub Pages
+- Writing professional project documentation
 
 ---
 
@@ -145,18 +199,14 @@ npm run build
 
 **Noor Fathima**
 
-Full Stack Developer passionate about building scalable and user-friendly web applications.
+Full Stack Developer | React Enthusiast
 
-This project was developed as part of a **Full Stack Engineer Internship** using **React** and **Vite**.
-
----
-
-## 📄 License
-
-This project is intended for educational and portfolio purposes.
+Built as part of the **ZeTheta Full Stack Engineer Internship** using **React** and **Vite**.
 
 ---
 
-Built with ❤️ using React + Vite
+## ⭐ Support
 
-⭐ If you found this project interesting, feel free to star the repository.
+If you found this project helpful or interesting, please consider giving it a ⭐ on GitHub.
+
+Thank you for visiting!
